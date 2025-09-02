@@ -8,6 +8,7 @@ import 'package:nectar_ui/core/widgets/custom_password_field.dart';
 import 'package:nectar_ui/core/widgets/custom_text_field.dart';
 import 'package:nectar_ui/core/widgets/main_button.dart';
 import 'package:nectar_ui/features/auth/pages/signup_screen.dart';
+import 'package:nectar_ui/features/home/pages/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -86,7 +87,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 20),
                   MainButton(text: 'Log In', onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      
+                      pushWithReplacement(context, HomeScreen());
+
                     }
                   }),
                   Row(
