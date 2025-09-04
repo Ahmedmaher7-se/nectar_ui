@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nectar_ui/core/utils/colors.dart';
 import 'package:nectar_ui/features/cart/page/cart_screen.dart';
 import 'package:nectar_ui/features/home/pages/home_screen.dart';
+import 'package:nectar_ui/features/welcome/welcome_screen.dart';
 
 class MainAppScreen extends StatefulWidget {
   const MainAppScreen({super.key});
@@ -15,6 +16,8 @@ class _MainAppScreenState extends State<MainAppScreen> {
     HomeScreen(),
     MyCartScreen(),
     MyCartScreen(),
+    HomeScreen(),
+    HomeScreen()
 
 
   ];

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_ui/core/constants/app_images.dart';
 import 'package:nectar_ui/core/utils/colors.dart';
+import 'package:nectar_ui/features/cart/page/checkout_screen.dart';
 
 class MyCartScreen extends StatefulWidget {
   const MyCartScreen({super.key});
@@ -121,7 +122,14 @@ class _MyCartScreenState extends State<MyCartScreen> {
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        backgroundColor: Colors.transparent,
+                        builder: (context) => CheckoutScreen(total: total),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primaryColor,
                       padding: const EdgeInsets.symmetric(vertical: 16),
@@ -179,7 +187,10 @@ class _MyCartScreenState extends State<MyCartScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+                Text(
+                  title,
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
                 Text(subtitle, style: const TextStyle(color: Colors.grey)),
                 const SizedBox(height: 10),
 
@@ -194,8 +205,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                           borderRadius: BorderRadius.circular(17),
                           border: Border.all(color: AppColors.borderColor),
                         ),
-                        child:
-                            Icon(Icons.remove, color: AppColors.greyColor),
+                        child: Icon(Icons.remove, color: AppColors.greyColor),
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -215,8 +225,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                           borderRadius: BorderRadius.circular(17),
                           border: Border.all(color: AppColors.borderColor),
                         ),
-                        child:
-                            Icon(Icons.add, color: AppColors.primaryColor),
+                        child: Icon(Icons.add, color: AppColors.primaryColor),
                       ),
                     ),
                   ],
