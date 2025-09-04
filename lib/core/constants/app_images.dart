@@ -11,4 +11,5 @@ class AppImages {
   static const String ginger = 'assets/images/ginger.png';
   static const String watermelon = 'assets/images/watermelon.png';
   static const String mango = 'assets/images/mango.png';
+  static const String done = 'assets/images/done.png';
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nectar_ui/core/utils/colors.dart';
+import 'package:nectar_ui/features/done/done_screen.dart';
 
 class CheckoutScreen extends StatelessWidget {
   final double total;
@@ -20,7 +21,6 @@ class CheckoutScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Header row
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -31,7 +31,7 @@ class CheckoutScreen extends StatelessWidget {
               IconButton(
                 onPressed: () => Navigator.pop(context),
                 icon: const Icon(Icons.close),
-              )
+              ),
             ],
           ),
           const SizedBox(height: 10),
@@ -51,12 +51,17 @@ class CheckoutScreen extends StatelessWidget {
           ),
           const SizedBox(height: 16),
 
-          // Place order button
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                // Handle order placing
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const DoneScreen(), 
+                  ),
+                );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primaryColor,
@@ -86,12 +91,14 @@ class CheckoutScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title,
-              style:
-                  const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-          Text(value,
-              style:
-                  const TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+          ),
+          Text(
+            value,
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+          ),
         ],
       ),
     );
